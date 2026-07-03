@@ -9,3 +9,6 @@ opentelemetry-sdk>=1.24.0
 opentelemetry-instrumentation-fastapi>=0.45b0
 opentelemetry-exporter-otlp>=1.24.0
 aiohttp>=3.9.5
+openai>=1.0.0
+anthropic>=0.30.0
+tenacity>=8.2.0

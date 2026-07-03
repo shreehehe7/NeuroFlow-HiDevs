@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     
     mlflow_tracking_uri: str = "http://mlflow:5000"
     
+    openai_api_key: str | None = None
+    anthropic_api_key: str | None = None
+    gemini_api_key: str | None = None
+    
     class Config:
         env_file = "../.env"
 
