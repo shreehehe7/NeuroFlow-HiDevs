@@ -1,0 +1,14 @@
+[
+  {
+    "query": "What is the capital of France?",
+    "answer": "The capital of France is Paris.",
+    "context": "Paris is the capital and most populous city of France.",
+    "human_score": 1.0
+  },
+  {
+    "query": "Who wrote Hamlet?",
+    "answer": "Hamlet was written by William Shakespeare.",
+    "context": "The Tragedy of Hamlet, Prince of Denmark, often shortened to Hamlet, is a tragedy written by William Shakespeare sometime between 1599 and 1601.",
+    "human_score": 1.0
+  }
+]

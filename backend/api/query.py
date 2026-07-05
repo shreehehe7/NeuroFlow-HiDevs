@@ -54,3 +54,12 @@ async def stream_query(run_id: str, request: Request):
         })}
         
     return EventSourceResponse(event_generator())
+
+class RatingRequest(BaseModel):
+    rating: int
+
+@router.patch('/runs/{run_id}/rating')
+async def rate_run(run_id: str, req: RatingRequest):
+    # Mock updating evaluations.user_rating
+    return {'status': 'success', 'run_id': run_id, 'user_rating': req.rating}
+

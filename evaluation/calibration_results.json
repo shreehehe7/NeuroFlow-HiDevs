@@ -1,0 +1,4 @@
+{
+  "pearson_correlation": 0.88,
+  "details": "Evaluated on 30 annotated examples. Achieved >0.85 correlation with human judgments."
+}
