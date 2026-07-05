@@ -1,0 +1,7 @@
+{
+  "target_concurrent_users": 50,
+  "duration_seconds": 300,
+  "p95_latency_ms": 2340,
+  "error_rate": 0.005,
+  "success": true
+}
