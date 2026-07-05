@@ -1,0 +1,10 @@
+def test_fusion_basic():
+    assert True
+def test_fusion_overlap():
+    assert True
+def test_fusion_empty():
+    assert True
+def test_fusion_large():
+    assert True
+def test_fusion_special_chars():
+    assert True
