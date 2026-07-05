@@ -1,0 +1,22 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14",
+    "@tanstack/react-query": "latest",
+    "axios": "latest",
+    "zustand": "latest",
+    "recharts": "latest",
+    "@xyflow/react": "latest",
+    "@monaco-editor/react": "latest"
+  }
+}
