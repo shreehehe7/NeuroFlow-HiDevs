@@ -40,6 +40,8 @@ services:
       mlflow:
         condition: service_started
     env_file: ../.env
+    volumes:
+      - upload_data:/app/uploads
 
   worker:
     build: ../backend
@@ -50,6 +52,8 @@ services:
       redis:
         condition: service_healthy
     env_file: ../.env
+    volumes:
+      - upload_data:/app/uploads
 
   jaeger:
     image: jaegertracing/all-in-one:latest
@@ -57,3 +61,4 @@ services:
 
 volumes:
   postgres_data:
+  upload_data:

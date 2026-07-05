@@ -2,9 +2,10 @@ import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Response
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
-from db.pool import init_db_pool, close_db_pool
+from db.pool import init_db_pool, close_db_pool, get_pool
 from db.health import check_postgres, check_redis, check_mlflow
 from db.migrations import apply_migrations
+from api import ingest
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -14,6 +15,7 @@ async def lifespan(app: FastAPI):
     # Startup
     logger.info("Starting up NeuroFlow API...")
     await init_db_pool()
+    app.state.pool = get_pool()
     await apply_migrations()
     yield
     # Shutdown
@@ -22,6 +24,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="NeuroFlow API", lifespan=lifespan)
 FastAPIInstrumentor.instrument_app(app)
+
+app.include_router(ingest.router)
 
 @app.get("/health")
 async def health_check():

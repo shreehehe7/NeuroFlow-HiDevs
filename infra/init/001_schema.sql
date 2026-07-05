@@ -5,7 +5,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE documents (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
   filename TEXT NOT NULL,
-  source_type VARCHAR(20) NOT NULL CHECK (source_type IN ('pdf','docx','image','csv','url','text')),
+  source_type VARCHAR(20) NOT NULL CHECK (source_type IN ('pdf','docx','image','csv','url','text','pptx')),
   content_hash TEXT UNIQUE NOT NULL,
   metadata JSONB NOT NULL DEFAULT '{}',
   pipeline_id UUID,
