@@ -21,3 +21,5 @@ jobs:
         uses: slackapi/slack-github-action@v1
         with:
           payload: '{"text": "⚠️ NeuroFlow quality gate failed!"}'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
