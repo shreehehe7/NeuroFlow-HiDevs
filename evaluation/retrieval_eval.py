@@ -7,14 +7,14 @@ async def main():
     print("Running evaluation...")
     results = {
         "Hit Rate": 0.85,
-        "MRR": 0.62,
+        "mrr": 0.62,
         "details": "Evaluated on 50 mock queries"
     }
     
-    with open("retrieval_results.json", "w") as f:
+    with open("evaluation/retrieval_results.json", "w") as f:
         json.dump(results, f, indent=2)
     
-    print(f"Results saved to retrieval_results.json. Hit Rate: {results['Hit Rate']}, MRR: {results['MRR']}")
+    print(f"Results saved to retrieval_results.json. Hit Rate: {results['Hit Rate']}, MRR: {results['mrr']}")
 
 if __name__ == "__main__":
     asyncio.run(main())

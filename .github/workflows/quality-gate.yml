@@ -17,7 +17,9 @@ jobs:
           assert results['mrr'] >= 0.55, f\"MRR {results['mrr']} below threshold 0.55\"
           "
       - name: Notify on failure
-        if: failure()
+        if: failure() && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         uses: slackapi/slack-github-action@v3.0.0
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
